@@ -1,0 +1,11 @@
+{
+  "bundles": [
+    {"name":"joptsimple.HelpFormatterMessages"}
+  ],
+  "resources": {
+    "includes": [
+      {"pattern":".*/kafka-version.*properties$$"}
+    ],
+    "excludes": []
+  }
+}

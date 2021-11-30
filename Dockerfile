@@ -13,5 +13,15 @@ RUN cd storage && sh ./build-image.sh && cd ..
 
 
 FROM docker.io/library/alpine:3.15.0
+WORKDIR kafka
 COPY --from=build_image /build/server/server-1.0 /kafka/server
 COPY --from=build_image /build/storage/storage-1.0 /kafka/storage
+COPY ./execute.sh /kafka/execute.sh
+COPY ./server.single.properties /kafka/server.single.properties
+
+EXPOSE 9092/tcp
+EXPOSE 9093/tcp
+
+RUN ./execute.sh
+
+

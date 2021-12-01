@@ -24,8 +24,6 @@ RUN chmod -R 777 /kafka
 EXPOSE 9092/tcp
 EXPOSE 9093/tcp
 
-USER kafka
-
 CMD ["sh", "/kafka/execute.sh"]
 
 

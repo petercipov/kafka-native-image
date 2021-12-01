@@ -6,6 +6,7 @@ RUN tar -xvf ./apache-maven-3.8.4-bin.tar.gz
 ADD pom.xml pom.xml
 ADD storage storage
 ADD server server
+ADD metadata metadata
 
 RUN ./apache-maven-3.8.4/bin/mvn clean package
 RUN cd server && sh ./build-image.sh && cd ..

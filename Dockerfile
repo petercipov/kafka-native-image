@@ -19,9 +19,13 @@ COPY --from=build_image /build/storage/storage-1.0 /kafka/storage
 COPY ./execute.sh /kafka/execute.sh
 COPY ./server.single.properties /kafka/server.single.properties
 
+RUN chmod -R 777 /kafka
+
 EXPOSE 9092/tcp
 EXPOSE 9093/tcp
 
-RUN ./execute.sh
+USER kafka
+
+CMD ["sh", "/kafka/execute.sh"]
 
 

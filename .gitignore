@@ -1,3 +1,7 @@
 .idea
 target
 dependency-reduced-pom.xml
+metadata/metadata-1.0
+server/server-1.0
+storage/storage-1.0
+*.build_artifacts.txt

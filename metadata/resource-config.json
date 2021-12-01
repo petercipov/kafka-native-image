@@ -3,7 +3,12 @@
     {"name":"net.sourceforge.argparse4j.internal.ArgumentParserImpl"}
   ],
   "resources": {
-    "includes": [],
+    "includes": [
+      {"pattern":".*/kafka-version.*properties$$"},
+      {"pattern":".*/*.*caps"},
+      {"pattern":".*/capabilities.*txt"},
+      {"pattern":".*/colors.*txt"}
+    ],
     "excludes": []
   }
 }

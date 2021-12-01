@@ -23,7 +23,7 @@ echo "log.retention.hours=${CONFIG_LOG_RETENTION_HOURS:-168}" >> ./generated.ser
 echo "log.segment.bytes=${CONFIG_LOG_SEGMENT_BYTES:-1073741824}" >> ./generated.server.properties
 echo "log.retention.check.interval.ms=${CONFIG_LOG_RETENTION_CHECK_INTERVAL_MS:-300000}" >> ./generated.server.properties
 
-export CONFIG_SERVER_PATH = "${CONFIG_SERVER_PATH:-./generated.server.properties}"
+export CONFIG_SERVER_PATH="${CONFIG_SERVER_PATH:-./generated.server.properties}"
 export CONFIG_BROKER_UUID="${CONFIG_BROKER_UUID:-`/kafka/storage -Dorg.slf4j.simpleLogger.defaultLogLevel=off random-uuid`}"
 
 echo "Server config file"

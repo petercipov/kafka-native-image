@@ -1,3 +1,0 @@
-[EXECUTABLE]
-storage-1.0
-

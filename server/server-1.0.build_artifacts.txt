@@ -1,3 +1,0 @@
-[EXECUTABLE]
-server-1.0
-

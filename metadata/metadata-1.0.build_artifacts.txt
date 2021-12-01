@@ -1,0 +1,3 @@
+[EXECUTABLE]
+metadata-1.0
+

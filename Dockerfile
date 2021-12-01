@@ -17,7 +17,6 @@ WORKDIR kafka
 COPY --from=build_image /build/server/server-1.0 /kafka/server
 COPY --from=build_image /build/storage/storage-1.0 /kafka/storage
 COPY ./execute.sh /kafka/execute.sh
-COPY ./server.single.properties /kafka/server.single.properties
 
 RUN chmod -R 777 /kafka
 

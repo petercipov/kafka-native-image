@@ -8,7 +8,7 @@ ADD metadata metadata
 ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
 ADD build.images.sh build.images.sh
 
-RUN build.images.sh
+RUN sh ./build.images.sh
 
 FROM docker.io/library/alpine:3.15.0
 WORKDIR kafka

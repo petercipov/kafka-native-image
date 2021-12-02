@@ -1,5 +1,12 @@
 #!/bin/sh
 
+apt-get update
+apt-get install -y curl
+
+curl -fsSL -o dist.tar.gz  https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-linux-amd64-21.3.0.tar.gz
+tar -xzf dist.tar.gz
+export PATH=/graalvm-ce-java11-21.3.0/bin:$PATH
+
 gu install native-image
 
 #source ./musl_x86.build.prepare.sh 

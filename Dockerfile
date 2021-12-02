@@ -10,7 +10,7 @@ ADD build.images.sh build.images.sh
 
 RUN sh ./build.images.sh
 
-FROM docker.io/library/alpine:3.15.0
+FROM debian:stable-slim
 WORKDIR kafka
 COPY --from=build_image /build/server/server-1.0 /kafka/server
 COPY --from=build_image /build/storage/storage-1.0 /kafka/storage

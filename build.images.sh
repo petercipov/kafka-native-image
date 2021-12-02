@@ -2,8 +2,8 @@
 
 gu install native-image
 
-source ./musl_x86.build.prepare.sh 
-echo "PATH: $PATH"
+#source ./musl_x86.build.prepare.sh 
+#echo "PATH: $PATH"
 
 curl -o  apache-maven-3.8.4-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
 tar -xvf ./apache-maven-3.8.4-bin.tar.gz

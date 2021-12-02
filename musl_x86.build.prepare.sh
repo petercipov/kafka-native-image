@@ -19,5 +19,6 @@ cd zlib-1.2.11
 ./configure --prefix=$TOOLCHAIN_DIR --static
 make
 make install
+cd ..
 
 export PATH="$TOOLCHAIN_DIR/bin:$PATH"

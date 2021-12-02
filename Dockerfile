@@ -1,19 +1,14 @@
 FROM ghcr.io/graalvm/graalvm-ce:latest AS build_image
 WORKDIR build
-RUN gu install native-image
-RUN curl -o  apache-maven-3.8.4-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
-RUN tar -xvf ./apache-maven-3.8.4-bin.tar.gz
+
 ADD pom.xml pom.xml
 ADD storage storage
 ADD server server
 ADD metadata metadata
 ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
-RUN source ./musl_x86.build.prepare.sh && echo "PATH: $PATH"
-RUN x86_64-linux-musl-gcc || true
-RUN ./apache-maven-3.8.4/bin/mvn clean package
-RUN cd server && sh ./build-image.sh && cd ..
-RUN cd storage && sh ./build-image.sh && cd ..
-RUN cd metadata && sh ./build-image.sh && cd ..
+ADD build.images.sh build.images.sh
+
+RUN build.images.sh
 
 FROM docker.io/library/alpine:3.15.0
 WORKDIR kafka

@@ -30,4 +30,4 @@ echo "Server config file"
 cat $CONFIG_SERVER_PATH
 
 /kafka/storage format -t $CONFIG_BROKER_UUID -c $CONFIG_SERVER_PATH
-/kafka/server $CONFIG_SERVER_PATH
+/kafka/server $JVM_ARGS $CONFIG_SERVER_PATH

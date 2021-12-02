@@ -8,8 +8,8 @@ ADD storage storage
 ADD server server
 ADD metadata metadata
 ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
-
 RUN source ./musl_x86.build.prepare.sh && echo "PATH: $PATH"
+RUN x86_64-linux-musl-gcc || true
 RUN ./apache-maven-3.8.4/bin/mvn clean package
 RUN cd server && sh ./build-image.sh && cd ..
 RUN cd storage && sh ./build-image.sh && cd ..

@@ -14,7 +14,7 @@ RUN cd storage && sh ./build-image.sh && cd ..
 RUN cd metadata && sh ./build-image.sh && cd ..
 
 
-FROM busybox:stable-glibc
+FROM ghcr.io/graalvm/graalvm-ce:latest
 WORKDIR kafka
 COPY --from=build_image /build/server/server-1.0 /kafka/server
 COPY --from=build_image /build/storage/storage-1.0 /kafka/storage

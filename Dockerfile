@@ -1,11 +1,11 @@
-FROM ghcr.io/graalvm/graalvm-ce:latest AS build_image
+FROM debian:stable-slim AS build_image
 WORKDIR build
 
 ADD pom.xml pom.xml
 ADD storage storage
 ADD server server
 ADD metadata metadata
-ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
+#ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
 ADD build.images.sh build.images.sh
 
 RUN sh ./build.images.sh

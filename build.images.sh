@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 apt-get update
 apt-get install -y curl  build-essential libz-dev zlib1g-dev
@@ -8,9 +8,6 @@ tar -xzf dist.tar.gz
 export PATH=/build/graalvm-ce-java11-21.3.0/bin:$PATH
 
 gu install native-image
-
-#source ./musl_x86.build.prepare.sh 
-#echo "PATH: $PATH"
 
 curl -o  apache-maven-3.8.4-bin.tar.gz https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
 tar -xvf ./apache-maven-3.8.4-bin.tar.gz

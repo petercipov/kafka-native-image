@@ -5,10 +5,9 @@ ADD pom.xml pom.xml
 ADD storage storage
 ADD server server
 ADD metadata metadata
-#ADD musl_x86.build.prepare.sh musl_x86.build.prepare.sh
 ADD build.images.sh build.images.sh
 
-RUN sh ./build.images.sh
+RUN bash ./build.images.sh
 
 FROM debian:stable-slim
 WORKDIR kafka

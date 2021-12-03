@@ -5,4 +5,5 @@ native-image \
   -J--add-exports=java.management/sun.management=ALL-UNNAMED \
   -H:ReflectionConfigurationFiles=./reflection-config.json \
   -H:ResourceConfigurationFiles=./resource-config.json \
-  --static # --libc=musl
+  -H:DynamicProxyConfigurationFiles=./proxy-config.json \
+  --static

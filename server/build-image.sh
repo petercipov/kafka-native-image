@@ -10,5 +10,5 @@ native-image \
   -H:+TraceNativeToolUsage \
   --native-image-info \
   --verbose \
-  --no-fallback
+  --no-fallback \
   --static

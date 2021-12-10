@@ -4,7 +4,8 @@
   ],
   "resources": {
     "includes": [
-      {"pattern":".*/kafka-version.*properties$$"}
+      {"pattern":".*/kafka-version.*properties$$"},
+      {"pattern":".*/snappy/native/.*"}
     ],
     "excludes": []
   }

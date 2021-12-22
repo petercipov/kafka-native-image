@@ -14,5 +14,5 @@ tar -xvf ./apache-maven-3.8.4-bin.tar.gz
 ./apache-maven-3.8.4/bin/mvn clean package
 
 cd server && sh ./build-image.sh && cd ..
-cd storage && sh ./build-image.sh && cd ..
 cd metadata && sh ./build-image.sh && cd ..
+cd storage && sh ./format.sh && cd ..

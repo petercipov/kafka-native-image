@@ -12,8 +12,8 @@ RUN bash ./build.images.sh
 FROM debian:stable-slim
 WORKDIR kafka
 COPY --from=build_image /build/server/server-1.0 /kafka/server
-COPY --from=build_image /build/storage/storage-1.0 /kafka/storage
 COPY --from=build_image /build/metadata/metadata-1.0 /kafka/metadata
+COPY --from=build_image /tmp/kraft-combined-logs /tmp/kraft-combined-logs
 COPY ./execute.sh /kafka/execute.sh
 
 RUN chmod -R 777 /kafka

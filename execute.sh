@@ -24,10 +24,8 @@ echo "log.segment.bytes=${CONFIG_LOG_SEGMENT_BYTES:-1073741824}" >> ./generated.
 echo "log.retention.check.interval.ms=${CONFIG_LOG_RETENTION_CHECK_INTERVAL_MS:-300000}" >> ./generated.server.properties
 
 export CONFIG_SERVER_PATH="${CONFIG_SERVER_PATH:-./generated.server.properties}"
-export CONFIG_BROKER_UUID="${CONFIG_BROKER_UUID:-`/kafka/storage -Dorg.slf4j.simpleLogger.defaultLogLevel=off random-uuid`}"
 
 echo "Server config file"
 cat $CONFIG_SERVER_PATH
 
-/kafka/storage format -t $CONFIG_BROKER_UUID -c $CONFIG_SERVER_PATH
 /kafka/server $JVM_ARGS $CONFIG_SERVER_PATH

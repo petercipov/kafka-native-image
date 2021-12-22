@@ -1,9 +1,0 @@
-{
-  "bundles": [
-    {"name":"net.sourceforge.argparse4j.internal.ArgumentParserImpl"}
-  ],
-  "resources": {
-    "includes": [],
-    "excludes": []
-  }
-}

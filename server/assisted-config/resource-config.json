@@ -1,0 +1,23 @@
+{
+  "resources":{
+  "includes":[
+    {
+      "pattern":"\\Qkafka/kafka-version.properties\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/slf4j/impl/StaticLoggerBinder.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/xerial/snappy/VERSION\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/xerial/snappy/native/Mac/x86_64/libsnappyjava.dylib\\E"
+    },
+    {
+      "pattern":"\\Qorg/xerial/snappy/native/Linux/x86_64/libsnappyjava.so\\E"
+    }
+  ]},
+  "bundles": [
+    {"name":"joptsimple.HelpFormatterMessages"}
+  ]
+}

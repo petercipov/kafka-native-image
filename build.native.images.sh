@@ -8,3 +8,10 @@ tar -xvf ./apache-maven-3.8.4-bin.tar.gz
 cd server && sh ./build-image.sh && cd ..
 cd metadata && sh ./build-image.sh && cd ..
 
+mkdir -p ./kafka
+mv ./server/server-1.0 ./kafka/server
+mv ./metadata/metadata-1.0 ./kafka/metadata
+mv ./execute.sh ./kafka/execute.sh
+
+chmod -R 777 ./kafka
+

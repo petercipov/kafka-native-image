@@ -40,6 +40,6 @@ else
 fi
 
 echo "Meta properties"
-cat "$META_PROPERTIES_PATH"
+cat "$META_PROPERTIES_FILE"
 
 /kafka/server $JVM_ARGS $CONFIG_SERVER_PATH

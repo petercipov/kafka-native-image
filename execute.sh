@@ -28,4 +28,18 @@ export CONFIG_SERVER_PATH="${CONFIG_SERVER_PATH:-./generated.server.properties}"
 echo "Server config file"
 cat $CONFIG_SERVER_PATH
 
+mkdir -p "${CONFIG_LOG_DIRS:-/tmp/kraft-combined-logs}"
+export META_PROPERTIES_FILE="${CONFIG_LOG_DIRS:-/tmp/kraft-combined-logs}/meta.properties"
+
+if [ -f "$META_PROPERTIES_FILE" ]; then
+    echo "$META_PROPERTIES_FILE exists, skipping generation"
+else
+    echo "node.id=${CONFIG_NODE_ID:-1}" >> "$META_PROPERTIES_FILE"
+    echo "version=1" >> "$META_PROPERTIES_FILE"
+    echo "cluster.id=tlmg7bOxQEylD5m0MLNt4Q" >> "$META_PROPERTIES_FILE"
+fi
+
+echo "Meta properties"
+cat "$META_PROPERTIES_PATH"
+
 /kafka/server $JVM_ARGS $CONFIG_SERVER_PATH

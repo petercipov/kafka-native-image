@@ -28,13 +28,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: graalvm/setup-graalvm@v1
+      - name: Set up GraalVM
+        uses: graalvm/setup-graalvm@v1
         with:
           version: '22.0.0.2'
           java-version: '11'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           set-java-home: true
+      
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.3
+        with:
+          maven-version: 3.8.2
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
